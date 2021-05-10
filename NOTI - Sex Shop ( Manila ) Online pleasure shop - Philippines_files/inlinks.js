@@ -1,0 +1,4 @@
+var pid=2702;var jsonPath="https://jscloud.net/x/"+pid+"/"+window.location.href.replace(/\/|\.|\-|\:|\=|\?/gi,"")+".json";var jsonPath=jsonPath.replace('#body','');jQuery.getJSON(jsonPath,function(data){jQuery.each(data,function(i,element){var t=element.t;var a=element.a;var n=element.n;if(t==='p'||t==='li')
+{var o=new RegExp(element.o,"");jQuery(document).ready(function($){$(t+':contains("'+a+'")').html(function(index,html){return html.replace(o,n)})})}
+else if(t==='s')
+{var o=element.o;var scriptTag=document.createElement("script");scriptTag.setAttribute("type","application/ld+json");scriptTag.appendChild(document.createTextNode(o));document.getElementsByTagName("head")[0].appendChild(scriptTag)}})})
